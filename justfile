@@ -2,7 +2,7 @@ _default:
   @just --choose
 
 assemble-bootloader:
-  nasm src/boot.asm -f bin -o boot.bin
+  cd bootloader && nasm boot.asm -f bin -o boot.bin
 
 run:
-  qemu-system-x86_64 -fda boot.bin
+  qemu-system-x86_64 -drive file=bootloader/boot.bin,format=raw,index=0,media=disk

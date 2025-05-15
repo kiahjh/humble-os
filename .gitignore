@@ -1,1 +1,4 @@
-*.bin
+/limine
+/ovmf
+*.iso
+*.hdd
